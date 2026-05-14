@@ -1,0 +1,11 @@
+<h1>List</h1>
+
+<% if @bookmarks.any? %>
+    <ul>
+      <% @bookmarks.each do |bookmark| %>
+          <li><%= bookmark.comment %></li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p>no bookmarks</p>
+  <% end %>
