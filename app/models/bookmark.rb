@@ -6,5 +6,5 @@ class Bookmark < ApplicationRecord
   # must be linked to a movie and a list, and the pairings should be unique
   validates :movie, presence: true, uniqueness: { scope: :list }
   # comment cannot be shorter than 6 characters
-  validates :comment, length: { minimum: 6 }
+  validates :comment, presence: true, length: { minimum: 6 }
 end
