@@ -1,2 +1,11 @@
-<h1>Lists#new</h1>
-<p>Find me in app/views/lists/new.html.erb</p>
+<h1>New List</h1>
+
+<div class="container p-2">
+  <h3 class="fw-lighter">Add a List</h3>
+  <!-- <form action="/lists" method="post"> -->
+  <%= simple_form_for @list do |f| %>
+    <%= f.input :name %>
+    <%= f.submit class: 'btn btn-success my-2 col-2' %>
+  <% end %>
+  <%= link_to "Home", lists_path, class: 'btn btn-primary my-2 col-2' %>
+</div>
