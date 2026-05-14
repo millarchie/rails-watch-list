@@ -18,6 +18,11 @@ class BookmarksController < ApplicationController
   def destroy
   end
 
+    # we can't trigger this from a url, we need a delete link in show page
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path, status: :see_other
+
   private
 
   def bookmark_params

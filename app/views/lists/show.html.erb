@@ -1,10 +1,11 @@
 <h1>List</h1>
 
 <% if @bookmarks.any? %>
-    <ul>
       <% @bookmarks.each do |bookmark| %>
-          <li><%= bookmark.comment %></li>
-          <li><%= bookmark.movie.title %></li>
+      <ul>
+          <li><h3><%= bookmark.movie.title %></h3></li>
+          <p><%= bookmark.comment %></p>
+      </ul>
       <% end %>
     </ul>
     <% else %>
