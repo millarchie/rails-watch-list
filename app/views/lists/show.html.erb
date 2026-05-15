@@ -7,7 +7,7 @@
       <div class="cards">
         <% @bookmarks.each do |bookmark| %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-          url(<%= @list.photo.attached? ? cl_image_path(@list.photo.key)
+          url(<%= bookmark.photo.attached? ? cl_image_path(bookmark.photo.key)
           : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
             <ul>
               <li><%= bookmark.movie.title %></li>
