@@ -2,6 +2,7 @@ class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
     @list = List.find(params[:list_id])
+    @movies = Movie.order(title: :asc)
   end
 
   def create
@@ -11,17 +12,16 @@ class BookmarksController < ApplicationController
     if @bookmark.save
       redirect_to list_path(@list)
     else
+      @movies = Movie.order(title: :asc)
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
+    @bookmark = Bookmark.find(params[:list_id])
+    @bookmark.destroy
+    redirect_to list_path, status: :see_other
   end
-
-    # we can't trigger this from a url, we need a delete link in show page
-    @task = Task.find(params[:id])
-    @task.destroy
-    redirect_to tasks_path, status: :see_other
 
   private
 

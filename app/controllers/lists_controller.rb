@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
   def index
     @lists = List.all
+    @list = List.new # for the form
   end
 
   def show
@@ -19,6 +20,8 @@ class ListsController < ApplicationController
       redirect_to list_path(@list)
     else
       render :new, status: :unprocessable_entity
+      # @lists = List.all
+      # render :index, status: :unprocessable_entity
     end
   end
 
