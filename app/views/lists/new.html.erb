@@ -5,6 +5,7 @@
   <!-- <form action="/lists" method="post"> -->
   <%= simple_form_for @list do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: 'btn btn-success my-2 col-2' %>
   <% end %>
   <%= link_to "Home", lists_path, class: 'btn btn-primary my-2 col-2' %>
