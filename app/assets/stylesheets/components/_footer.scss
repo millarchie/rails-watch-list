@@ -1,0 +1,10 @@
+.site-footer {
+  background-image: image-url('cinema_footer.jpg');
+  background-size: cover;        /* or "contain" if you prefer */
+  background-position: center;   /* adjust for focal point */
+  background-repeat: no-repeat;
+  min-height: 220px;             /* banner height — change as needed */
+  padding: 2rem 0;
+  position: relative;
+  color: #fff;
+}

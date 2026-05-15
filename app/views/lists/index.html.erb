@@ -2,33 +2,21 @@
   <div class="container">
     <h1><strong>CineFile</strong></h1>
     <h3 class="text-white">File your favourite movies</h3>
-    <a class="btn btn-success mt-3" href="#">Create List</a>
+    <%= link_to "Create a File", new_list_path, class: "btn btn-success my-2 col-1.5" %>
   </div>
 </div>
 
 
-
-
-
 <div class="container mt-3">
   <div class="d-flex justify-content-between align-items-center">
-    <h1>Lists</h1>
+    <h1>CineFiles:</h1>
   </div>
-
-
-
-
   <% if @lists.any? %>
     <div class="cards">
       <% @lists.each do |list| %>
-        <%= link_to list_path(list), class: 'text-white text-decoration-none' do %>
-              <div class="card-category" style="background-image:
-              linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url(<%= list.photo.attached? ? cl_image_path(list.photo.key)
-              : 'https://happiclap.com/wp-content/uploads/2019/06/Everyday-Clapboard-1.jpg' %>)">
-                <%= list.name %>
-              </div>
-        <% end %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://www.pinterest.com/melodypeavey/2025-movies-shows/')">
+          <%= link_to list.name, list_path(list), class: 'text-white text-decoration-none' %>
+        </div>
       <% end %>
     </div>
   <% else %>
